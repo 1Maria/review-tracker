@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Review = ({review}) => {
+const Review = ({review, isSmall}) => {
     const classes = useStyles();
     return (
         <Box className={classes.review}>
@@ -55,7 +55,7 @@ const Review = ({review}) => {
                         {format(new Date(review.published_at), 'MM/dd/yyyy')}
                     </Typography>
                 </Box>
-                <ForumIcon style={{fill: theme.palette.primary.main}} />
+                {isSmall && <ForumIcon style={{fill: theme.palette.primary.main}} />}
             </Box>
         </Box>
     );

@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Box px={0}>
       <Header />
-      <Review review={review} />
+      <Review review={review} isSmall={false} />
     </Box>
   );
 };
