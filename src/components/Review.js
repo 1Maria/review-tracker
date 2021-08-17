@@ -1,6 +1,9 @@
 import React from 'react';
+import { format } from 'date-fns'
 import { Box, Typography, makeStyles } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
+import ForumIcon from '@material-ui/icons/Forum';
+import theme from '../theme';
 
 const useStyles = makeStyles((theme) => ({
     review: {
@@ -41,12 +44,17 @@ const Review = ({review}) => {
             <Typography component="h3" variant="h3" className={classes.content}>
                 {review.content}
             </Typography>
-            <Typography component="h4" variant="h4" className={classes.author}>
-                {review.author}
-            </Typography>
-            <Typography component="h4" variant="h4" className={classes.date}>
-                {review.published_at}
-            </Typography>
+            <Box style={{ display: 'flex', alignItems: 'space-between', justifyContent: 'space-between'}}>
+                <Box style={{ display: 'flex', alignItems: 'space-between', justifyContent: 'space-between', gap: '1.75rem'}}>
+                    <Typography component="h4" variant="h4" className={classes.author}>
+                        {review.author}
+                    </Typography>
+                    <Typography component="h4" variant="h4" className={classes.date}>
+                        {format(new Date(review.published_at), 'MM/dd/yyyy')}
+                    </Typography>
+                </Box>
+                <ForumIcon style={{fill: theme.palette.primary.main}} />
+            </Box>
         </Box>
     );
 }
