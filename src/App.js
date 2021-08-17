@@ -1,9 +1,13 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
+import Header from './components/Header';
 
-const App = () => (
-   <div>
-     <p>Hello World</p>
-   </div>
-);
+const App = () => {
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
+};
 
 export default App;
