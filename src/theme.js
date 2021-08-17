@@ -16,6 +16,16 @@ const theme = createTheme({
             default: '#8D95A3',
         },
     },
+    typography: {
+        fontFamily: [
+            'Roboto', 
+            'sans-serif'
+        ].join(','), 
+        h2: {
+            fontSize: '1.5rem',
+            fontWeight: 700, 
+        },
+    },
 });
 
 export default theme;
