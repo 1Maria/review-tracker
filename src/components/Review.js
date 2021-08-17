@@ -2,6 +2,7 @@ import React from 'react';
 import { format } from 'date-fns'
 import { Box, Typography, makeStyles } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ForumIcon from '@material-ui/icons/Forum';
 import theme from '../theme';
 
@@ -40,7 +41,8 @@ const Review = ({review}) => {
             <Typography component="h2" variant="h2" className={classes.place}>
                 {review.place}
             </Typography>
-            <StarIcon style={{fill: '#FBCD33'}}/>
+            {new Array(review.rating).fill(0).map(rating => <StarIcon style={{fill: '#FBCD33'}}/>)}
+            {new Array(5 - review.rating).fill(0).map(rating => <StarBorderIcon style={{fill: '#FBCD33'}}/>)}
             <Typography component="h3" variant="h3" className={classes.content}>
                 {review.content}
             </Typography>
