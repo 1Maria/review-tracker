@@ -5,9 +5,13 @@ const theme = createTheme({
     palette: {
         primary: {
             main: '#0057B3',
+            white: '#FBFCFD',
         }, 
         secondary: { 
-            main: '#FBFCFD',
+            main: '#000000', 
+            darkGray: '#5D6167', 
+            lightGray: '#8D95A3',
+            blue: '#097AE6',
         },
         error: {
             main: red.A400,
@@ -25,6 +29,14 @@ const theme = createTheme({
             fontSize: '1.5rem',
             fontWeight: 700, 
         },
+        h3: {
+            fontSize: '1.125rem', 
+            fontWeight: 400,
+        }, 
+        h4: {
+            fontSize: '0.875rem', 
+            fontWeight: 400,
+        }
     },
 });
 
