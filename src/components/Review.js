@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '1.25rem', 
         paddingRight: '1.25rem',
     },
+    smallReview: {
+        maxWidth: '18.75rem',
+        maxHeight: '15.625rem',
+    },
     place: {
         color: theme.palette.secondary.main,
         paddingTop: '1.25rem',
@@ -37,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 const Review = ({review, isSmall}) => {
     const classes = useStyles();
     return (
-        <Box className={classes.review}>
+        <Box className={`${classes.review} ${isSmall && classes.smallReview}`}>
             <Typography component="h2" variant="h2" className={classes.place}>
                 {review.place}
             </Typography>
