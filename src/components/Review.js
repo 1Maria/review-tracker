@@ -61,8 +61,8 @@ const Review = ({review, isSmall}) => {
             <Typography component="h2" variant="h2" className={classes.place}>
                 {review.place}
             </Typography>
-            {new Array(review.rating).fill(0).map(rating => <StarIcon style={{fill: '#FBCD33'}}/>)}
-            {new Array(5 - review.rating).fill(0).map(rating => <StarBorderIcon style={{fill: '#FBCD33'}}/>)}
+            {new Array(review.rating).fill(0).map((_, idx) => <StarIcon key={idx} style={{fill: '#FBCD33'}}/>)}
+            {new Array(5 - review.rating).fill(0).map((_, idx) => <StarBorderIcon key={idx} style={{fill: '#FBCD33'}}/>)}
             <Typography component="h3" variant="h3" className={classes.content}>
                 {contentTruncation}
             </Typography>
