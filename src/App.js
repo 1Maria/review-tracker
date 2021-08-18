@@ -1,22 +1,46 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, makeStyles } from '@material-ui/core';
 import Header from './components/Header';
 import Review from './components/Review';
+import Reviews from './components/Reviews';
 
-const review =  {
-  "id": "5d707203b65083001e956f0a",
-  "author": "Weeks Duran",
-  "place": "Big Johns Burgers",
-  "published_at": "Thu Jun 27 1974 11:46:39 GMT-0500 (Central Daylight Time)",
-  "rating": 5,
-  "content": "Ipsum mollit anim pariatur eu qui velit Lorem ea enim excepteur ut fugiat fugiat esse. Incididunt consectetur deserunt pariatur magna sit dolore voluptate. Minim cupidatat fugiat magna quis consectetur esse id esse adipisicing anim velit. Cillum mollit et nisi ex occaecat labore enim nulla cupidatat. Occaecat Lorem officia est sit enim amet commodo sunt occaecat reprehenderit Lorem culpa. Aute anim ullamco voluptate incididunt incididunt excepteur in irure.\r\n"
-};
+const reviews = require('./reviews.json');
+
+const useStyles = makeStyles((theme) => ({
+  reviews: {
+    [theme.breakpoints.up('xs')]: {
+        paddingLeft: '3rem', 
+        paddingRight: '3rem',
+    },
+    [theme.breakpoints.up('sm')]: {
+        paddingLeft: '2rem', 
+        paddingRight: '2rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        paddingLeft: '5rem', 
+        paddingRight: '5rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+        paddingLeft: '6rem', 
+        paddingRight: '6rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+        paddingLeft: '17rem', 
+        paddingRight: '17rem',
+    },
+  }
+}));
 
 const App = () => {
+  const classes = useStyles();
+
   return (
     <Box px={0}>
       <Header />
-      <Review review={review} isSmall={false} />
+      <Box className={classes.reviews} >
+        {/* <Review review={reviews[1]} isSmall={false} /> */}
+        <Reviews />
+      </Box>
     </Box>
   );
 };

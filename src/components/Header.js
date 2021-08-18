@@ -7,7 +7,27 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.white,
         height: '3.75rem',
         width: '100%',
-        padding: '1rem 7.5rem'
+        padding: '1rem',
+        [theme.breakpoints.up('xs')]: {
+            paddingLeft: '3rem', 
+            paddingRight: '3rem',
+        },
+        [theme.breakpoints.up('sm')]: {
+            paddingLeft: '2rem', 
+            paddingRight: '2rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: '8rem', 
+            paddingRight: '8rem',
+        },
+        [theme.breakpoints.up('lg')]: {
+            paddingLeft: '6rem', 
+            paddingRight: '6rem',
+        },
+        [theme.breakpoints.only('xl')]: {
+            paddingLeft: '20rem', 
+            paddingRight: '20rem',
+        },
     },
 }));
 

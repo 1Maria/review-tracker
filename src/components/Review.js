@@ -11,7 +11,9 @@ const useStyles = makeStyles((theme) => ({
     review: {
         backgroundColor: theme.palette.primary.white,
         minHeight: '15.625rem',
-        margin: '2.5rem 7.5rem',
+        // margin: '2.5rem 7.5rem',
+        marginTop: '2.5rem', 
+        marginBottom: '2.5rem',
         paddingLeft: '1.25rem', 
         paddingRight: '1.25rem',
     },
