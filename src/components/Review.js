@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { format } from 'date-fns'
 import { Box, Typography, makeStyles } from '@material-ui/core';
 import clsx from 'clsx';
@@ -52,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Review = ({review, isSmall}) => {
     const classes = useStyles();
-    const { id } = useParams();
 
     let contentTruncation = review.content;
     if (isSmall && review.content.length > 80) {

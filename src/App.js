@@ -2,10 +2,8 @@ import React from 'react';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Box, makeStyles } from '@material-ui/core';
 import Header from './components/Header';
-import Review from './components/Review';
+import ShowReview from './components/ShowReview';
 import Reviews from './components/Reviews';
-
-const reviews = require('./reviews.json');
 
 const useStyles = makeStyles((theme) => ({
   reviews: {
@@ -42,7 +40,7 @@ const App = () => {
         <Box className={classes.reviews}>
           <Switch>
             <Route path="/review/:id">
-              <Review review={reviews.reviews[1]} isSmall={false} />
+              <ShowReview />
             </Route>
             <Route path="/">
               <Reviews />

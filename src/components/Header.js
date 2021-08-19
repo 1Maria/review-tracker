@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
+    
     return (
         <Box className={classes.header}>
             <Typography component="h1" variant="h2">
