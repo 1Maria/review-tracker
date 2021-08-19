@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { format } from 'date-fns'
 import { Box, Typography, makeStyles } from '@material-ui/core';
 import clsx from 'clsx';
@@ -49,7 +50,11 @@ const useStyles = makeStyles((theme) => ({
     bottomLineLarge: {
         position: 'absolute', 
         bottom: 0,
-    }
+    }, 
+    reviewLink: {
+        color: theme.palette.primary.main,
+        textDecoration: 'none',
+    },
 }));
 
 const Review = ({review, isSmall}) => {
@@ -81,7 +86,7 @@ const Review = ({review, isSmall}) => {
                         {format(new Date(review.published_at), 'MM/dd/yyyy')}
                     </Typography>
                 </Box>
-                {isSmall && <ForumIcon style={{fill: theme.palette.primary.main}} />}
+                {isSmall &&  <Link className={classes.reviewLink} to={`/review/${review.id}`}><ForumIcon style={{fill: theme.palette.primary.main}} /></Link>}
             </Box>
         </Box>
     );
