@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
         gap: '2.25rem',
         width: '100%',
     },
+    innerTopLine: {
+        display: 'flex', 
+        gap: '2.25rem',
+        width: '100%',
+    },
     content: {
         color: theme.palette.secondary.darkGray,
         height: '8.25rem',
@@ -53,7 +58,7 @@ const Response = ({ response, id, onUpdate }) => {
     return (
         <Box className={classes.response}>
             <Box className={classes.topLine} pt="2.25rem" px="1.25rem">
-                <Box className={classes.topLine}>
+                <Box className={classes.innerTopLine}>
                     <ReplyIcon style={{fill: '#097AE6'}}/>
                     {
                         showForm || !response
