@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Box, makeStyles } from '@material-ui/core';
 import Header from './components/Header';
 import Review from './components/Review';
@@ -35,13 +36,21 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <Box px={0}>
-      <Header />
-      <Box className={classes.reviews} >
-        {/* <Review review={reviews[1]} isSmall={false} /> */}
-        <Reviews />
+    <Router>
+      <Box px={0}>
+        <Header />
+        <Box className={classes.reviews}>
+          <Switch>
+            <Route path="/review/:id">
+              <Review review={reviews[1]} isSmall={false} />
+            </Route>
+            <Route path="/">
+              <Reviews />
+            </Route>
+          </Switch>
+        </Box>
       </Box>
-    </Box>
+    </Router>
   );
 };
 
