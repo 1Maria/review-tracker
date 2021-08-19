@@ -2,8 +2,7 @@ import React from 'react';
 import { format } from 'date-fns'
 import { makeStyles, Box, Typography } from '@material-ui/core';
 import ReplyIcon from '@material-ui/icons/Reply';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import theme from '../theme';
+import EditPopover from './EditPopover';
 
 const useStyles = makeStyles((theme) => ({
     response: {
@@ -52,7 +51,7 @@ const Response = ({ response }) => {
                         { response.content }
                     </Typography>
                 </Box>
-                <MoreHorizIcon style={{fill: theme.palette.primary.main}}/>
+                <EditPopover />
             </Box>
             <Box className={classes.bottomLine}>
                 <Typography component="h4" variant="h4" className={classes.author}>
