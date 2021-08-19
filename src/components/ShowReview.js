@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from '@material-ui/core';
 import Review from './Review';
+import Response from './Response';
 
 const ShowReview = () => {
     const { id } = useParams();
@@ -15,7 +16,8 @@ const ShowReview = () => {
 
     return (
         <Box>
-            { review && <Review review={review} isSmall={false} />}
+            { review && <Review review={review} isSmall={false} /> }
+            { review && review.response && <Response response={review.response} /> }
         </Box>
     );
 }

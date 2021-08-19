@@ -14,12 +14,15 @@ const useStyles = makeStyles((theme) => ({
         // margin: '2.5rem 7.5rem',
         marginTop: '2.5rem', 
         marginBottom: '2.5rem',
-        paddingLeft: '1.25rem', 
-        paddingRight: '1.25rem',
+        paddingLeft: '5rem', 
+        paddingRight: '5rem',
+        position: 'relative',
     },
     smallReview: {
         maxWidth: '18.75rem',
         maxHeight: '15.625rem',
+        paddingLeft: '1.25rem', 
+        paddingRight: '1.25rem',
     },
     place: {
         color: theme.palette.secondary.main,
@@ -41,11 +44,11 @@ const useStyles = makeStyles((theme) => ({
     }, 
     bottomLine: {
         display: 'flex', 
-        alignItems: 'space-between', 
         justifyContent: 'space-between',
     },
     bottomLineLarge: {
-        marginTop: '3rem',
+        position: 'absolute', 
+        bottom: 0,
     }
 }));
 
