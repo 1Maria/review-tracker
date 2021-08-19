@@ -56,8 +56,8 @@ const Response = ({ response, id, onUpdate }) => {
                 <Box className={classes.topLine}>
                     <ReplyIcon style={{fill: '#097AE6'}}/>
                     {
-                        showForm 
-                        ? <ResponseForm id={id} defaultContent={response.content} defaultAuthor={response.author} onSubmit={onSubmit} /> 
+                        showForm || !response
+                        ? <ResponseForm id={id} defaultContent={response?.content || ''} defaultAuthor={response?.author || ''} onSubmit={onSubmit} /> 
                         : 
                         <Typography component="h3" variant="h3" className={classes.content}>
                             { response.content }
@@ -67,7 +67,7 @@ const Response = ({ response, id, onUpdate }) => {
                 <EditPopover onClick={() => {setShowForm(true)}}/>
             </Box>
             { 
-                !showForm &&
+                (!showForm && response) &&
                 <Box className={classes.bottomLine}>
                     <Typography component="h4" variant="h4" className={classes.author}>
                         { response.author }

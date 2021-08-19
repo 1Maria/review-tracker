@@ -21,7 +21,7 @@ const ShowReview = () => {
     return (
         <Box>
             { review && <Review review={review} isSmall={false} /> }
-            { review && review.response && <Response id={id} response={review.response} onUpdate={fetchReview} /> }
+            { review && <Response id={id} response={review?.response || false} onUpdate={fetchReview} /> }
         </Box>
     );
 }
