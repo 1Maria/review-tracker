@@ -29,7 +29,7 @@ const Reviews = () => {
     return (
         <Box>
             <Grid container spacing={isLg ? 10 : 1} alignItems="center" className={classes.reviews}>
-                {reviews.map(review => 
+                {reviews.reviews.map(review => 
                     <Grid alignItems="center" justifyContent="space-around" key={review.id} container item xs={12} sm={6} lg={4} spacing={1}>
                         <Review review={review} isSmall={true} />
                     </Grid>

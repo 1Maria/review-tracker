@@ -42,7 +42,7 @@ const App = () => {
         <Box className={classes.reviews}>
           <Switch>
             <Route path="/review/:id">
-              <Review review={reviews[1]} isSmall={false} />
+              <Review review={reviews.reviews[1]} isSmall={false} />
             </Route>
             <Route path="/">
               <Reviews />
