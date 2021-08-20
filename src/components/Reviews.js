@@ -4,7 +4,7 @@ import Review from './Review';
 
 const useStyles = makeStyles((theme) => ({
     reviews: {
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.up('xs')]: {
             justifyContent: "center",
         },
         [theme.breakpoints.up('sm')]: {
